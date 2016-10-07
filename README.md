@@ -3,8 +3,18 @@
    The accuracy is not guaranteed, due to no finetune the model in fp16. 
 
 
-Check out the [SSD](https://github.com/weiliu89/caffe/tree/ssd) , [FP16](https://github.com/NVIDIA/caffe/tree/experimental/fp16)
+Check out the [ssd](https://github.com/weiliu89/caffe/tree/ssd) , [FP16](https://github.com/NVIDIA/caffe/tree/experimental/fp16)
      
+## Execution 
+
+1. Download the SSD 300 models trained on Pascal VOC and MSCOCO in [ssd](https://github.com/weiliu89/caffe/tree/ssd)
+
+2. Use webcam demo code
+  ```Shell
+  python examples/ssd/ssd_pascal_webcam.py  
+  # Execute in fp16 mode
+  python examples/ssd/ssd_pascal_webcam.py fp16 
+  ```
 
 ## Citation of SSD
 Please cite SSD in your publications if it helps your research:
