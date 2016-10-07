@@ -108,6 +108,7 @@ template <>
 void caffe_axpy<double,double>(const int N, const double alpha, const double* X,
     double* Y) { cblas_daxpy(N, alpha, X, 1, Y, 1); }
 
+
 #ifndef CPU_ONLY
 // TODO Consider CUDA
 template<>
@@ -122,6 +123,9 @@ void caffe_axpy<float16,float16>(const int N, const float16 alpha, const float16
     Y[i] = Get<float16>(Get<float>(alpha) * Get<float>(X[i]) + Get<float>(Y[i]));
   }
 }
+
+
+
 #endif
 
 template <typename Dtype>
@@ -188,6 +192,7 @@ void caffe_copy(const int N, const Dtype* X, Dtype* Y) {
   }
 }
 
+template void caffe_copy<bool,bool>(const int N, const bool* X, bool* Y);
 template void caffe_copy<int,int>(const int N, const int* X, int* Y);
 template void caffe_copy<unsigned int, unsigned int>(const int N, const unsigned int* X,
     unsigned int* Y);

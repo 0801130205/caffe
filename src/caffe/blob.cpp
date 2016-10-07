@@ -149,6 +149,7 @@ void Blob<Dtype,Mtype>::ShareDiff(const Blob& other) {
 // Blob<int> or Blob<unsigned int>.
 template <> void Blob<unsigned int, unsigned int>::Update() { NOT_IMPLEMENTED; }
 template <> void Blob<int,int>::Update() { NOT_IMPLEMENTED; }
+template <> void Blob<bool,bool>::Update() { NOT_IMPLEMENTED; }
 
 template <typename Dtype, typename Mtype>
 void Blob<Dtype,Mtype>::Update() {
@@ -182,6 +183,11 @@ template <> unsigned int Blob<unsigned int, unsigned int>::asum_data() const {
 }
 
 template <> int Blob<int, int>::asum_data() const {
+  NOT_IMPLEMENTED;
+  return 0;
+}
+
+template <> bool Blob<bool, bool>::asum_data() const {
   NOT_IMPLEMENTED;
   return 0;
 }
@@ -221,6 +227,11 @@ template <> int Blob<int,int>::asum_diff() const {
   return 0;
 }
 
+template <> bool Blob<bool,bool>::asum_diff() const {
+  NOT_IMPLEMENTED;
+  return 0;
+}
+
 template <typename Dtype, typename Mtype>
 Mtype Blob<Dtype,Mtype>::asum_diff() const {
   if (!diff_) { return Get<Mtype>(0); }
@@ -252,6 +263,11 @@ template <> unsigned int Blob<unsigned int, unsigned int>::sumsq_data() const {
 }
 
 template <> int Blob<int, int>::sumsq_data() const {
+  NOT_IMPLEMENTED;
+  return 0;
+}
+
+template <> bool Blob<bool, bool>::sumsq_data() const {
   NOT_IMPLEMENTED;
   return 0;
 }
@@ -293,6 +309,11 @@ template <> int Blob<int, int>::sumsq_diff() const {
   return 0;
 }
 
+template <> bool Blob<bool, bool>::sumsq_diff() const {
+  NOT_IMPLEMENTED;
+  return 0;
+}
+
 template <typename Dtype, typename Mtype>
 Mtype Blob<Dtype, Mtype>::sumsq_diff() const {
   Mtype sumsq;
@@ -328,6 +349,10 @@ template <> void Blob<int, int>::scale_data(int scale_factor) {
   NOT_IMPLEMENTED;
 }
 
+template <> void Blob<bool, bool>::scale_data(bool scale_factor) {
+  NOT_IMPLEMENTED;
+}
+
 template <typename Dtype, typename Mtype>
 void Blob<Dtype,Mtype>::scale_data(Mtype scale_factor) {
   Dtype* data;
@@ -358,6 +383,9 @@ template <> void Blob<unsigned int, unsigned int>::scale_diff(unsigned int scale
 }
 
 template <> void Blob<int, int>::scale_diff(int scale_factor) {
+  NOT_IMPLEMENTED;
+}
+template <> void Blob<bool, bool>::scale_diff(bool scale_factor) {
   NOT_IMPLEMENTED;
 }
 
@@ -628,6 +656,7 @@ INSTANTIATE_CLASS(Blob);
 // we need full matrix of instantiations for blob
 template class Blob<int,int>;
 template class Blob<unsigned int, unsigned int>;
+template class Blob<bool, bool>;
 
 }  // namespace caffe
 
