@@ -10,6 +10,17 @@ By [Cheng-Yang Fu*](http://www.cs.unc.edu/~cyfu/), [Wei Liu*](http://www.cs.unc.
 
 [arXiv paper](https://arxiv.org/abs/1701.06659) 
 
+### Contents
+1. [Installation](#installation)
+
+### Installation
+1. Download the code from github. We call this directory as `$CAFFE_ROOT` later.
+	```Shell
+	git clone https://github.com/chengyangfu/caffe.git
+	cd caffe 
+	git checkout dssd
+	```
+
 
 ### Citing DSSD
 
