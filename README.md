@@ -69,10 +69,49 @@ Please cite DSSD in your publications if it helps your research:
 	# $CAFFE_ROOT/models/ResNet-101/ResNet-101-deploy.prototxt
 	```
 
-	
-	
-   
+### Train/Eval
+1. Train and Eval the SSD model 
 
+	```Shell
+	# Train the SSD-ResNet-101 321x321
+	python examples/ssd/ssd_pascal_resnet_321.py
+	# GPU setting may need be change according to the numbers of gpu 
+	# models are generated in:
+	# $CAFFE_ROOT/models/ResNet-101/VOC0712/SSD_VOC07_321x321
+	# Evaluate the model
+	cd $CAFFE_ROOT
+	./build/tools/caffe train --solver="./models/ResNet-101/VOC0712/SSD_VOC07_321x321/test_solver.prototxt"  \
+	--weights="./models/ResNet-101/VOC0712/SSD_VOC07_321x321/ResNet-101_VOC0712_SSD_VOC07_321x321_iter_80000.caffemodel" \
+	--gpu=0
+	# batch size in the test.prototxt may need be changed.
+	# If the batch size is changed, remeber to change the test_iter in test_solver.prototxt at same time. 
+	# It should reach 77.5* mAP at 80k iterations.
+	```
+   
+2. Train and Eval the DSSD model. In this script, Resnet-101 and SSD extra layers are frozen and only the extra layers of DSSD are trained.
+
+	```Shell
+	# Use the SSD-ResNet-101 321x321 as the pretrained model
+	python examples/ssd/ssd_pascal_resnet_deconv_321.py
+	# Evaluate the model
+	cd $CAFFE_ROOT
+	./build/tools/caffe train --solver="./models/ResNet-101/VOC0712/DSSD_VOC07_321x321/test_solver.prototxt"  \
+	--weights="./models/ResNet-101/VOC0712/DSSD_VOC07_321x321/ResNet-101_VOC0712_DSSD_VOC07_321x321_iter_30000.caffemodel" \
+	--gpu=0
+	# It should reach 78.6* mAP at 30k iterations.
+	```
 	
-	
+3. Train and Evalthe DSSD model. In this script, we try to fine-tune the entire network. In order to sucessfully finetune the network, we need to freeze all the batch norm related layers in Caffe.
+
+	```Shell
+	# Use the DSSD-ResNet-101 321x321 as the pretrained model
+	python examples/ssd/ssd_pascal_resnet_deconv_ft_321.py
+	# Evaluate the model
+	cd $CAFFE_ROOT
+	./build/tools/caffe train --solver="./models/ResNet-101/VOC0712/DSSD_VOC07_FT_321x321/test_solver.prototxt"  \
+	--weights="./models/ResNet-101/VOC0712/DSSD_VOC07_FT_321x321/ResNet-101_VOC0712_DSSD_VOC07_FT_321x321_iter_40000.caffemodel" \
+	--gpu=0
+	# Finetuning the entire network only works for the model with 513x513 inputs not 321x321. 
+	```
+  
   
