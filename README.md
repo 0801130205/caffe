@@ -6,6 +6,10 @@ By [Cheng-Yang Fu*](http://www.cs.unc.edu/~cyfu/), [Wei Liu*](http://www.cs.unc.
 
 *=Equal Contribution
 
+### Status now 
+The first version is done. Users can start training the SSD/DSSD with Resnet-101 now. 
+Stay tuned. Models, trained for Pascal VOC 2007, 2012 and COCO , will be released soon. 
+
 ### Introduction
 
 [arXiv paper](https://arxiv.org/abs/1701.06659) 
