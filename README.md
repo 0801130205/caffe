@@ -13,7 +13,7 @@ Stay tuned. Models, trained for Pascal VOC 2007, 2012 and COCO , will be release
 
 ### Introduction
 
-DSSD brings additional context into state-of-the-art general object detection by adding extra deconvolution structures. The DSSD achieve much better accuracy on small objects compared to SSD.
+Deconvolutional SSD brings additional context into state-of-the-art general object detection by adding extra deconvolution structures. The DSSD achieve much better accuracy on small objects compared to SSD.
 
 The code is based on [SSD](https://github.com/weiliu89/caffe/tree/ssd). For more details, please refer to our [arXiv paper](https://arxiv.org/abs/1701.06659). 
 
