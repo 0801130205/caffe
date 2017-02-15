@@ -133,6 +133,7 @@ Please cite DSSD in your publications if it helps your research:
 2. We strongly suggest to use the models trained instead of training from scracth. 
 		
 	[SSD_513_COCO](https://drive.google.com/file/d/0By9LEMeCDdboa0IxSkIxbEVWZVk/view?usp=sharing)
+	
 	[DSSD_513_COCO](https://drive.google.com/file/d/0By9LEMeCDdboSDRlVHY2SFNJVzQ/view?usp=sharing) 
 	```Shell
 	# move the compressed files at $CAFFE_ROOT/models/ResNet-101
