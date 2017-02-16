@@ -129,6 +129,7 @@ Please cite DSSD in your publications if it helps your research:
 	# Train SSD513-ResNet101 on COCO 
 	python examples/ssd/ssd_coco_resnet_513.py
 	# Train DSSD513-ResNet101 on COCO and use SSD513 as the pretrained model
+	python examples/ssd/ssd_coco_resnet_deconv_513.py
 	```
 2. We strongly suggest to use the trained models instead of training from scracth. 
 		
