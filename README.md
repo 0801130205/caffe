@@ -13,7 +13,7 @@ Stay tuned. Models, trained for Pascal VOC 2007, 2012 and COCO , will be release
 
 ### Introduction
 
-Deconvolutional SSD brings additional context into state-of-the-art general object detection by adding extra deconvolution structures. The DSSD achieve much better accuracy on small objects compared to SSD.
+Deconvolutional SSD brings additional context into state-of-the-art general object detection by adding extra deconvolution structures. The DSSD achieves much better accuracy on small objects compared to SSD.
 
 The code is based on [SSD](https://github.com/weiliu89/caffe/tree/ssd). For more details, please refer to our [arXiv paper](https://arxiv.org/abs/1701.06659). 
 
@@ -96,7 +96,7 @@ Please cite DSSD in your publications if it helps your research:
 	# It should reach 77.5* mAP at 80k iterations.
 	```
    
-2. Train and Eval the DSSD model. In this script, Resnet-101 and SSD extra layers are frozen and only the extra layers of DSSD are trained.
+2. Train and Evaluate the DSSD model. In this script, Resnet-101 and SSD related layers are frozen and only the DSSD related layers are trained.
 
 	```Shell
 	# Use the SSD-ResNet-101 321x321 as the pretrained model
@@ -130,7 +130,7 @@ Please cite DSSD in your publications if it helps your research:
 	python examples/ssd/ssd_coco_resnet_513.py
 	# Train DSSD513-ResNet101 on COCO and use SSD513 as the pretrained model
 	```
-2. We strongly suggest to use the models trained instead of training from scracth. 
+2. We strongly suggest to use the trained models instead of training from scracth. 
 		
 	[SSD_513_COCO](https://drive.google.com/file/d/0By9LEMeCDdboa0IxSkIxbEVWZVk/view?usp=sharing)
 	
@@ -143,6 +143,6 @@ Please cite DSSD in your publications if it helps your research:
 	```
 	
   
-3. In our experiments, the model with 513x513 inputs are trained using Nvdia P40 which consists of 22GB memory. Because we add extra batch normalization layers, it's important to make the mini-batchs size at least 5 in each gpu. So, if you use the gpu with smaller memory, I don't think you can replicate the results. 
+3. In our experiments, the model with 513x513 inputs are trained using NVIDIA P40 which consists of 22GB memory. Because we add extra batch normalization layers, it's important to make the mini-batchs size at least 5 in each gpu. So, if you use the gpu with smaller memory, I don't think you can replicate the results. 
      		
 	
