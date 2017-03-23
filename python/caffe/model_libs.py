@@ -1349,7 +1349,7 @@ def CreateMultiBoxOutput(net, data_layer="data", num_classes=[], from_layers=[],
         if step:
             net.update(name, {'step': step})
         if start:
-            net.update(name, {'start': start})
+            net.update(name, {'offset': start})
         if img_height != 0 and img_width != 0:
             if img_height == img_width:
                 net.update(name, {'img_size': img_height})
