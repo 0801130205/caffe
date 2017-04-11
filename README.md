@@ -142,7 +142,7 @@ Please cite DSSD in your publications if it helps your research:
 	tar -vzxf SSD_513_COCO.tar.gz
 	tar -vzxf DSSD_513_COCO.tar.gz
 	```
-	
+	P.S.: Please change the field "start" to offset" in PriorBox Layers.
   
 3. In our experiments, the model with 513x513 inputs are trained using NVIDIA P40 which consists of 22GB memory. Because we add extra batch normalization layers, it's important to make the mini-batchs size at least 5 in each gpu. So, if you use the gpu with smaller memory, I don't think you can replicate the results. 
      		
